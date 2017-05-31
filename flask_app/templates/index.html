@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<form method="POST">
+	{{ form.csrf_token }}
+		<div class="row">
+			<div class="three columns">
+			{{ form.preference.label }} {{ form.preference() }}
+			</div>
+		</div>
+	</form>
+
+	<button type="submit" onclick="myFunction()">SUBMIT</button>
+
+	{% if pred %}
+		<div class="row">
+			<div class="six columns">
+				<h2 id="top">{{ top_10 }}</h2>
+			</div>
+		</div>
+	{% endif %}
+
+
+</body>
+</html>
