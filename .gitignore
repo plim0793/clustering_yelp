@@ -11,3 +11,4 @@ data/
 *.csv
 *.zip
 *.json
+*.pkl
