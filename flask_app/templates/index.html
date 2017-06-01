@@ -2,10 +2,73 @@
 <head>
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<style>
+
+	.page-wrapper p {
+		padding: 10px 0px 10px;
+		text-align: justify;
+	}
+
+	.page-wrapper {
+		max-width: 740px;
+		width: 50%;
+		margin: auto;
+		margin-top: 100px;
+		margin-bottom: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: relative;
+	}
+	.row h2 {
+		padding: 15px 0px 0px;
+		color: black;
+	}
+
+	button {
+		color: black;
+	    background-color: rgba(128, 128, 128, 0.41);
+	    border: none;
+	    padding: 0px;
+	    font-size: 17px;
+	    width: 94px;
+	    height: 36px;
+	    border-radius: 4px;
+	}
+
+	button:hover {
+		background-color: rgba(128, 128, 128, 0.61);
+		transition: .3s;
+
+	}
+
+	input:focus { 
+	background-color:#b6bdc6; 
+	outline: none;
+	}
+
+	label {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	#preference {
+	border: 1.5px solid #ccc; 
+	background: white; 
+	font-family: monospace;
+	padding: 10px 20px; 
+	font-size: 18px; 
+	margin: 20px 10px 20px 0; 
+	color: #111e2d;
+	width: 100%;
+	}
+
+</style>
 </head>
 
 <body>
-
+<div class=page-wrapper>
 	<form method="POST">
 	{{ form.csrf_token }}
 		<div class="row">
@@ -16,15 +79,28 @@
 	</form>
 
 	<button type="submit" onclick="myFunction()">SUBMIT</button>
-
-	{% if pred %}
 		<div class="row">
 			<div class="six columns">
-				<h2 id="top">{{ top_10 }}</h2>
+				<h2 id="top_l">{{ top_10_l }}</h2>
+				<h2 id="top1">{{ top_1 }}</h2>
+				<h2 id="top2">{{ top_2 }}</h2>
+				<h2 id="top3">{{ top_3 }}</h2>
+				<h2 id="top4">{{ top_4 }}</h2>
+				<h2 id="top5">{{ top_5 }}</h2>
+				<h2 id="top6">{{ top_6 }}</h2>
+				<h2 id="top7">{{ top_7 }}</h2>
+				<h2 id="top8">{{ top_8 }}</h2>
+				<h2 id="top9">{{ top_9 }}</h2>
+				<h2 id="top10">{{ top_10 }}</h2>
 			</div>
 		</div>
-	{% endif %}
 
+</div>
 
 </body>
 </html>
+
+
+
+
+
