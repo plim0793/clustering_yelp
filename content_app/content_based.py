@@ -33,10 +33,10 @@ app = Flask(__name__)
 app.config.from_object("config")
 
 # unpickle objects
-lsh = joblib.load('lsh.pkl')
-
 w2v = models.KeyedVectors.load_word2vec_format("~/Documents/GoogleNews-vectors-negative300.bin.gz",binary=True)
-
+lsh = joblib.load('lsh.pkl')
+df_rn = joblib.load('df_rn.pkl')
+print("FINISHED LOADING OBJECTS")
 
 ##### FUNCTIONS AND CLASSES #####
 class PredictForm(FlaskForm):
@@ -165,6 +165,7 @@ def get_nearest(indices, distances, df):
     df_temp = df.loc[indices, ['rating','name','reviews']]
     df_temp['dist'] = distances
     df_temp = df_temp.sort_values(['dist'], ascending=False)
+    df_temp = df_temp.drop_duplicates()
     df_temp = df_temp.reset_index()
     return df_temp
 
@@ -208,7 +209,7 @@ def index():
 	sample_transform = pipe_sample.fit_transform(sample_df)
 
 	# Calculate distances and indices from input
-	distances, indices = lsh.kneighbors(sample_transform, n_neighbors=5)
+	distances, indices = lsh.kneighbors(sample_transform, n_neighbors=10)
 
 	# Get a dataframe sorted by distances
 	df_sample_rec = get_nearest(indices[0], distances[0], df_rn)
