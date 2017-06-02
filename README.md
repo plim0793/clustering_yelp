@@ -4,8 +4,8 @@
 The scripts to the recommender systems can be found in the "modeling" folder while the scraping functions can be found in the "scraping" folder.  The Flask apps for the two recommender systems can be found in the "collab_app" and "content_app" folders.
 
 Here are the two YouTube videos demonstrating the two Flask apps.
-[Link to Content-Based Rec Sys Video](https://www.youtube.com/watch?v=bX6-XMOndLk)
-[Link to Collaborative-Filter Rec Sys Video](https://www.youtube.com/watch?v=Rq-AZ_xPamY)
+1. [Link to Content-Based Rec Sys Video](https://www.youtube.com/watch?v=bX6-XMOndLk)
+2. [Link to Collaborative-Filter Rec Sys Video](https://www.youtube.com/watch?v=Rq-AZ_xPamY)
 
 ## Content-Based Recommender System
 
